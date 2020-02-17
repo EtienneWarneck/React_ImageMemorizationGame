@@ -1,0 +1,28 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app_header {
+    /* border: 1px solid red; */
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.app_title {
+    /* border: 1px solid red; */
+    margin: auto;
+    display: inline;
+}
+
+.app_rule {
+    /* border: 1px solid red; */
+}
+
+.status {
+    font-size: 30px;
+}
+
+.app_wrapper{
+    margin: auto;
+}
