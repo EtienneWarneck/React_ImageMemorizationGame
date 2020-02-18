@@ -19,11 +19,12 @@ class App extends Component {
   shuffleImg = id => {
     let clickedImgIds = this.state.clickedImgIds;
 
-    //
+    //if the array already includes the image...
     if (clickedImgIds.includes(id)) {
-      this.setState({ clickedImgIds: [], score: 0, status: "Game Over!"});
+      //change score to 0, Game Over and empty array
+      this.setState({ clickedImgIds: [], score: 0, status: "Game Over!" });
       // state.style({color: 'red'});
-    //  this.state.style={color: "red"};
+      //  this.state.style={color: "red"}
       return;
     } else {
       clickedImgIds.push(id)
@@ -35,6 +36,7 @@ class App extends Component {
 
       this.setState({ images, clickedImgIds, score: clickedImgIds.length, status: " " });
 
+      //randomize position of images
       for (let i = images.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [images[i], images[j]] = [images[j], images[i]];
@@ -44,28 +46,28 @@ class App extends Component {
 
   // Map over this.state.cards and render a Card component
   render() {
-   const {score, status } = this.state; //destructuring 
-     return (
+    const { score, status } = this.state; //destructuring 
+    return (
       <div className="app_main">
         <header className="app_header">
           <h1 className="app_title">Clicky Game</h1>
           <p className="app_rule"> Click each image only once!</p>
         </header >
         <Score total={score}
-          goal={8}
+          // goal={8}
           status={status}
         />
         <div className="app_container">
-        <Wrapper>
-          {this.state.images.map(images => (
-            <Card
-              shuffleImg={this.shuffleImg}
-              id={images.id}
-              key={images.id}
-              image={images.image}
-            />
-          ))}
-        </Wrapper>
+          <Wrapper>
+            {this.state.images.map(images => (
+              <Card
+                shuffleImg={this.shuffleImg}
+                id={images.id}
+                key={images.id}
+                image={images.image}
+              />
+            ))}
+          </Wrapper>
         </div>
       </div>
     );

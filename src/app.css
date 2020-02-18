@@ -1,5 +1,6 @@
 * {
     font-family: 'Open Sans', sans-serif;
+    /* text-align: center; */
 }
 
 .app_header {
@@ -25,4 +26,6 @@
 
 .app_wrapper{
     margin: auto;
+    width: 100%;
+    text-align: center;
 }
